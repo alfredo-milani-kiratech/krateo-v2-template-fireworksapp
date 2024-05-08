@@ -6,8 +6,6 @@ metadata:
     {{- include "fireworks-app.labels" . | nindent 4 }}
 data:
   values: |
-    { "organizationName": "{{ .Values.git.toRepo.org }}",
-      "repositoryName": "{{ .Values.git.toRepo.name }}",
-      "serviceType": "{{ .Values.app.service.type }}",
+    { "serviceType": "{{ .Values.app.service.type }}",
       "servicePort": "{{ .Values.app.service.port }}"
     }
