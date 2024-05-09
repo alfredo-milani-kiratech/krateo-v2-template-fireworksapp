@@ -1,0 +1,15 @@
+apiVersion: composition.krateo.io/v0-0-7
+kind: Xapp
+metadata:
+  annotations:
+    krateo.io/connector-verbose: "true"
+    meta.helm.sh/release-namespace: krateo-system
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: x
+  namespace: demo-system
+spec:
+  app:
+    service:
+      type: LoadBalancer
+      port: 31555

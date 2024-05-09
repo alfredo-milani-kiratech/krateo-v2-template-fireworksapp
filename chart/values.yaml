@@ -1,4 +1,14 @@
 # @param {object} app Helm Chart parameters section
+infra:
+  # @param {string} app Helm Chart service parameters section
+  # env: pro
+  env: dev
+  # @param {string} app Helm Chart service parameters section
+  svc: false
+  # svc: true
+
+
+# @param {object} app Helm Chart parameters section
 app:
   # @param {object} app Helm Chart service parameters section
   service:

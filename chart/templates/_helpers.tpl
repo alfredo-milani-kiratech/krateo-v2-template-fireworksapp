@@ -5,6 +5,23 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
+{{/*does not works*/}}
+{{- define "fireworks-app.is-dev-env" -}}
+{{- if eq .Values.infra.env "dev" }}
+true
+{{- else }}
+false
+{{- end }}
+{{- end }}
+
+{{- define "fireworks-app.is-dev-env-2" -}}
+{{- if eq .Values.infra.env "dev" }}
+{{ include "fireworks-app.dev" . }}
+{{- else if eq .Values.infra.env "pro" }}
+{{ include "fireworks-app.pro" . }}
+{{- end }}
+{{- end }}
+
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).

@@ -10,5 +10,5 @@ metadata:
   namespace: demo-system
 spec:
   chart:
-    url: https://github.com/alfredo-milani-kiratech/krateo-v2-template-fireworksapp/releases/download/0.0.5/x-app-0.0.5.tgz
+    url: https://github.com/alfredo-milani-kiratech/krateo-v2-template-fireworksapp/releases/download/0.0.7/x-app-0.0.7.tgz
   deletionPolicy: Delete

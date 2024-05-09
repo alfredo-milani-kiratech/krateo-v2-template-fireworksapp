@@ -1,5 +1,3 @@
-{{- if eq .Values.infra.env "dev" }}
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -10,7 +8,5 @@ data:
   values: |
     { "serviceType": "{{ .Values.app.service.type }}",
       "servicePort": "{{ .Values.app.service.port }}",
-      "env": "DEV"
+      "env": "PRO"
     }
-
-{{- end }}
