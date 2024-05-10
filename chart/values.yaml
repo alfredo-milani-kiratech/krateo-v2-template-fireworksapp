@@ -1,11 +1,9 @@
 # @param {object} app Helm Chart parameters section
 infra:
   # @param {string} app Helm Chart service parameters section
-  # env: pro
   env: dev
-  # @param {string} app Helm Chart service parameters section
+  # @param {boolean} app Helm Chart service parameters section
   svc: false
-  # svc: true
 
 # @param {object} app Helm Chart parameters section
 app:
