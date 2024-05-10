@@ -1,4 +1,4 @@
-apiVersion: composition.krateo.io/v0-0-9
+apiVersion: composition.krateo.io/v0-0-11
 kind: Xapp
 metadata:
   annotations:
@@ -9,10 +9,13 @@ metadata:
   name: x
   namespace: demo-system
 spec:
+  # app:
+  #   service:
+  #     type: LoadBalancer
+  #     port: 31555
   app:
-    service:
-      type: LoadBalancer
-      port: 31555
+    env: dev
+    svc: false
   infra:
     env: dev
     svc: false
