@@ -26,7 +26,7 @@
             "boolean"
           ],
           "title": "Helm Chart service parameters section",
-          "default": "false"
+          "default": false
         }
       }
     },
