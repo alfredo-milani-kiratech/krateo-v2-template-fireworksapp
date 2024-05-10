@@ -29,8 +29,7 @@
           "default": false
         }
       }
-    }
-    ,  
+    },
     "app": {
       "type": "object",
       "title": "Helm Chart parameters section",

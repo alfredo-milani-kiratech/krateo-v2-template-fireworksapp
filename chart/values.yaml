@@ -7,7 +7,6 @@ infra:
   svc: false
   # svc: true
 
-
 # @param {object} app Helm Chart parameters section
 app:
   # @param {object} app Helm Chart service parameters section
