@@ -4,12 +4,3 @@ infra:
   env: dev
   # @param {boolean} app Helm Chart service parameters section
   svc: false
-
-# @param {object} app Helm Chart parameters section
-app:
-  # @param {object} app Helm Chart service parameters section
-  service:
-    # @param {enum{NodePort,LoadBalancer}} app Helm Chart service type
-    type: NodePort
-    # @param {integer{min=30000,max=32767}} app Helm Chart service port
-    port: 31180

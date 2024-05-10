@@ -29,47 +29,6 @@
           "default": false
         }
       }
-    },
-    "app": {
-      "type": "object",
-      "title": "Helm Chart parameters section",
-      "required": [
-        "service"
-      ],
-      "properties": {
-        "service": {
-          "type": "object",
-          "title": "Helm Chart service parameters section",
-          "required": [
-            "type",
-            "port"
-          ],
-          "properties": {
-            "type": {
-              "type": [
-                "string",
-                "boolean",
-                "number",
-                "object",
-                "array"
-              ],
-              "enum": [
-                "NodePort",
-                "LoadBalancer"
-              ],
-              "title": "Helm Chart service type",
-              "default": "NodePort"
-            },
-            "port": {
-              "type": "integer",
-              "minimum": 30000,
-              "maximum": 32767,
-              "title": "Helm Chart service port",
-              "default": "31180"
-            }
-          }
-        }
-      }
     }
   }
 }
