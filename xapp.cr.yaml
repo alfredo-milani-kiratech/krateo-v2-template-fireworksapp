@@ -1,4 +1,4 @@
-apiVersion: composition.krateo.io/v0-0-14
+apiVersion: composition.krateo.io/v0-1-0
 kind: Xapp
 metadata:
   annotations:
@@ -9,6 +9,14 @@ metadata:
   name: x
   namespace: demo-system
 spec:
-  infra:
-    env: dev
-    svc: false
+  environments:
+    - dev
+    - uat
+    - pro
+  tickets:
+    - id: ticket1
+      title: title1
+      body: body1
+    - id: ticket2
+      title: title2
+      body: body3

@@ -1,6 +1,14 @@
-# @param {object} app Helm Chart parameters section
-infra:
-  # @param {string} app Helm Chart service parameters section
-  env: dev
-  # @param {boolean} app Helm Chart service parameters section
-  svc: false
+# @param {string[]} env Environments
+environments:
+  - dev
+  - uat
+  - pro
+
+# @param {object[]} tickets Environments
+tickets:
+  - id: ticket1
+    title: title1
+    body: body1
+  - id: ticket2
+    title: title2
+    body: body3
