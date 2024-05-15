@@ -8,9 +8,6 @@
   "properties": {
     "environments": {
       "type": "array",
-      "default": [
-        ""
-      ],
       "title": "Environments",
       "items": {
         "type": [
@@ -19,49 +16,20 @@
       }
     },
     "tickets": {
-      "type": "array",
-      "default": [
-        ""
-      ],
-      "title": "Environments",
-      "items": {
-        "type": [
-          "object"
-        ]
-      },
-      "required": [],
+      "type": "object",
+      "title": "Tickets",
       "properties": {
         "id": {
-          "type": [
-            "string",
-            "boolean",
-            "number",
-            "object",
-            "array"
-          ],
-          "default": "ticket2"
+          "type": "string"
         },
         "title": {
-          "type": [
-            "string",
-            "boolean",
-            "number",
-            "object",
-            "array"
-          ],
-          "default": "title2"
+          "type": "string"
         },
         "body": {
-          "type": [
-            "string",
-            "boolean",
-            "number",
-            "object",
-            "array"
-          ],
-          "default": "body3"
+          "type": "string"
         }
-      }
+      },
+      "required": ["id", "title", "body"]
     }
   }
 }

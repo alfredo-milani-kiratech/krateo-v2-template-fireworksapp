@@ -1,12 +1,12 @@
 apiVersion: composition.krateo.io/v0-1-0
-kind: Xapp
+kind: Pbi
 metadata:
   annotations:
     krateo.io/connector-verbose: "true"
     meta.helm.sh/release-namespace: krateo-system
   labels:
     app.kubernetes.io/managed-by: Helm
-  name: x
+  name: instance1
   namespace: demo-system
 spec:
   environments:

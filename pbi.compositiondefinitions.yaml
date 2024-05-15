@@ -6,9 +6,9 @@ metadata:
     meta.helm.sh/release-namespace: krateo-system
   labels:
     app.kubernetes.io/managed-by: Helm
-  name: x
+  name: pbi
   namespace: demo-system
 spec:
   chart:
-    url: https://github.com/alfredo-milani-kiratech/krateo-v2-template-fireworksapp/releases/download/0.1.0/x-app-0.1.0.tgz
+    url: https://github.com/alfredo-milani-kiratech/krateo-v2-template-fireworksapp/releases/download/0.1.1/pbi-0.1.1.tgz
   deletionPolicy: Delete
