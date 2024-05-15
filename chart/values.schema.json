@@ -16,9 +16,13 @@
       }
     },
     "tickets": {
-      "type": "object",
+      "type": "array",
       "title": "Tickets",
-      "properties": {
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
         "id": {
           "type": "string"
         },
@@ -30,6 +34,7 @@
         }
       },
       "required": ["id", "title", "body"]
+      }
     }
   }
 }
