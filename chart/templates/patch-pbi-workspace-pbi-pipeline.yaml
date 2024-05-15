@@ -21,7 +21,7 @@ spec:
       kind: ConfigMap
       name: {{ include "fireworks-app.chart" $ }}-pbi-pipeline
       namespace: demo-system
-    fieldPath: data.workspaces[{{ $index }}].id
+    fieldPath: data.workspace-{{ $environment }}-id
     transforms:
       - .
       - printf "%s"

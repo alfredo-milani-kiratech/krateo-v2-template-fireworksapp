@@ -8,11 +8,7 @@ metadata:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
   id: ""
-  workspaces:
-    - environemnt: tst
-      id: ""
-    - environemnt: uat
-      id: ""
-    - environemnt: pro
-      id: ""
+  workspace-dev-id: ""
+  workspace-uat-id: ""
+  workspace-pro-id: ""
 ...

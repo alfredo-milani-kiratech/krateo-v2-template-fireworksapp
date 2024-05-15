@@ -8,9 +8,9 @@ metadata:
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
-  precondition:
-    ticket1-status: ""
-    ticket2-status: ""
+  precondition-ticket1-status: ""
+  precondition-ticket2-status: ""
   id: ""
+  env: {{ $environment }}
 ...
 {{- end }}
