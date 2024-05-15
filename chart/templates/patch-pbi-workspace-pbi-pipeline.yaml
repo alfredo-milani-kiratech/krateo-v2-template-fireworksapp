@@ -1,9 +1,9 @@
-{{- range $environment := .Values.environments }}
+{{- range $index, $environment := .Values.environments }}
 ---
 apiVersion: krateo.io/v1alpha1
 kind: Patch
 metadata:
-  name: {{ include "fireworks-app.chart" $ }}-patch-jira-workspace-{{ $environment }}
+  name: {{ include "fireworks-app.chart" $ }}-patch-workspace-pipeline-{{ $environment }}
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 spec:
@@ -11,41 +11,16 @@ spec:
     objectReference:
       apiVersion: v1
       kind: ConfigMap
-      name: {{ include "fireworks-app.chart" $ }}-jira-ticket1
+      name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
       namespace: demo-system
-    fieldPath: data.status
+    fieldPath: data.id
   to:
     objectReference:
       apiVersion: v1
       kind: ConfigMap
-      name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
+      name: {{ include "fireworks-app.chart" $ }}-pbi-pipeline
       namespace: demo-system
-    fieldPath: data.precondition.ticket1.status
-    transforms:
-      - .
-      - printf "%s"
----
-apiVersion: krateo.io/v1alpha1
-kind: Patch
-metadata:
-  name: {{ include "fireworks-app.chart" $ }}-patch-jira-workspace-{{ $environment }}
-  labels:
-    {{- include "fireworks-app.labels" $ | nindent 4 }}
-spec:
-  from:
-    objectReference:
-      apiVersion: v1
-      kind: ConfigMap
-      name: {{ include "fireworks-app.chart" $ }}-jira-ticket2
-      namespace: demo-system
-    fieldPath: data.status
-  to:
-    objectReference:
-      apiVersion: v1
-      kind: ConfigMap
-      name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
-      namespace: demo-system
-    fieldPath: data.precondition.ticket1.status
+    fieldPath: data.workspaces[{{ $index }}].id
     transforms:
       - .
       - printf "%s"
