@@ -11,4 +11,4 @@ tickets:
     body: body1
   - id: ticket2
     title: title2
-    body: body3
+    body: body2

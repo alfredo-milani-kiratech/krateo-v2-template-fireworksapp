@@ -3,7 +3,7 @@
 apiVersion: krateo.io/v1alpha1
 kind: Patch
 metadata:
-  name: {{ include "fireworks-app.chart" $ }}-patch-workspace-pipeline-{{ $environment }}
+  name: {{ include "fireworks-app.chart" $ }}-patch-workspace-{{ $environment }}-pipeline
   namespace: demo-system
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}

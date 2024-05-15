@@ -21,7 +21,7 @@ spec:
       kind: ConfigMap
       name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
       namespace: demo-system
-    fieldPath: data.precondition.ticket1.status
+    fieldPath: data.precondition.ticket1-status
     transforms:
       - .
       - printf "%s"
@@ -47,7 +47,7 @@ spec:
       kind: ConfigMap
       name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
       namespace: demo-system
-    fieldPath: data.precondition.ticket1.status
+    fieldPath: data.precondition.ticket2-status
     transforms:
       - .
       - printf "%s"

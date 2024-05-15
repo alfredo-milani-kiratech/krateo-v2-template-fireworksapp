@@ -9,8 +9,8 @@ metadata:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
   precondition:
-    ticket1.status: ""
-    ticket2.status: ""
+    ticket1-status: ""
+    ticket2-status: ""
   id: ""
 ...
 {{- end }}
