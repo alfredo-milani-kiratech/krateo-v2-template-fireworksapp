@@ -4,6 +4,7 @@ apiVersion: krateo.io/v1alpha1
 kind: Patch
 metadata:
   name: {{ include "fireworks-app.chart" $ }}-patch-jira-workspace-{{ $environment }}
+  namespace: demo-system
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 spec:
@@ -29,6 +30,7 @@ apiVersion: krateo.io/v1alpha1
 kind: Patch
 metadata:
   name: {{ include "fireworks-app.chart" $ }}-patch-jira-workspace-{{ $environment }}
+  namespace: demo-system
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 spec:
