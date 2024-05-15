@@ -12,5 +12,5 @@ data:
   title: {{ $ticket.title }} 
   body: {{ $ticket.body }}
   status: ""
-...
 {{- end}}
+...

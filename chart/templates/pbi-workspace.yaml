@@ -12,5 +12,5 @@ data:
   precondition-ticket2-status: ""
   id: ""
   env: {{ $environment }}
-...
 {{- end }}
+...

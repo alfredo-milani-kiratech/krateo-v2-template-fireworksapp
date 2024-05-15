@@ -25,5 +25,5 @@ spec:
     transforms:
       - .
       - printf "%s"
-...
 {{- end }}
+...
