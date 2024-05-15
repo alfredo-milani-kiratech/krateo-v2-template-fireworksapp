@@ -1,0 +1,15 @@
+{{- range $ticket := .Values.tickets }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fireworks-app.chart" $ }}-jira-{{ $ticket.id }}
+  labels:
+    {{- include "fireworks-app.labels" $ | nindent 4 }}
+data:
+  id: {{ $ticket.id }} 
+  title: {{ $ticket.title }} 
+  body: {{ $ticket.body }}
+  status: ""
+...
+{{- end}}

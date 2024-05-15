@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fireworks-app.chart" $ }}-pbi-pipeline
+  labels:
+    {{- include "fireworks-app.labels" $ | nindent 4 }}
+data:
+  id: ""
+  workspaces:
+    - environemnt: tst
+      id: ""
+    - environemnt: uat
+      id: ""
+    - environemnt: pro
+      id: ""
+...

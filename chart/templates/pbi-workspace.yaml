@@ -1,0 +1,15 @@
+{{- range $environment := .Values.environments }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
+  labels:
+    {{- include "fireworks-app.labels" $ | nindent 4 }}
+data:
+  precondition:
+    ticket1.status: ""
+    ticket2.status: ""
+  id: ""
+...
+{{- end }}
