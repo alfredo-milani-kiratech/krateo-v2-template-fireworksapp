@@ -1,3 +1,4 @@
+{{- if eq (lookup "v1" "ConfigMap" "demo-system" "{{ include "fireworks-app.chart" $ }}-jira-ticket1").data.status "done" }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -11,4 +12,5 @@ data:
   workspace-dev-id: ""
   workspace-uat-id: ""
   workspace-pro-id: ""
+{{- end }}
 ...

@@ -1,3 +1,4 @@
+{{- if eq (lookup "v1" "ConfigMap" "demo-system" "{{ include "fireworks-app.chart" $ }}-jira-ticket1").data.status "done" }}
 {{- range $environment := .Values.environments }}
 ---
 apiVersion: v1
@@ -12,5 +13,6 @@ data:
   precondition-ticket2-status: ""
   id: ""
   env: {{ $environment }}
+{{- end }}
 {{- end }}
 ...
