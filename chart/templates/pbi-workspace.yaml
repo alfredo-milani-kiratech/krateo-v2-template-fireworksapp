@@ -1,5 +1,5 @@
-{{ $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.19-jira-ticket1" }}
-{{- if $resource and (eq $resource.data.status "done") }}
+{{ $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.20-jira-ticket1" }}
+{{- if and $resource (eq $resource.data.status "done") }}
 {{- range $environment := .Values.environments }}
 ---
 apiVersion: v1
