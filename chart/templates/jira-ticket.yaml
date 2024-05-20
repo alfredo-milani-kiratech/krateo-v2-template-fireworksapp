@@ -13,4 +13,4 @@ data:
   body: {{ $ticket.body }}
   status: ""
 ...
-{{- end}}
+{{- end }}
