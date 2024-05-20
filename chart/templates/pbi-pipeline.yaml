@@ -1,4 +1,5 @@
-{{- if eq (lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.16-jira-ticket1").data.status "done" }}
+{{ $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.19-jira-ticket1" }}
+{{- if $resource and (eq $resource.data.status "done") }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -12,5 +13,5 @@ data:
   workspace-dev-id: ""
   workspace-uat-id: ""
   workspace-pro-id: ""
-{{- end }}
 ...
+{{- end }}
