@@ -1,4 +1,6 @@
-{{ $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.22-jira-ticket1" }}
+{{- $chartname := include "fireworks-app.chart" $ -}}
+{{- $ticketname := printf "%s-jira-ticket1" $chartname -}}
+{{- $resource := lookup "v1" "ConfigMap" "demo-system" "$ticketname" -}}
 {{- if and $resource (eq $resource.data.status "done") }}
 {{- range $environment := .Values.environments }}
 ---
