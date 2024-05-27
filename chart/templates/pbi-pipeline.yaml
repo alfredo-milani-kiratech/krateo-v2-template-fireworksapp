@@ -1,4 +1,4 @@
-{{- if include "fireworks-app.are-tickets-solved" $ }}
+{{- if include "fireworks-app.are-tickets-solved" $ | fromYaml }}
 ---
 apiVersion: v1
 kind: ConfigMap

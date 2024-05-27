@@ -98,8 +98,8 @@ Compose fromRepo URL
 	Check if all tickets has been solved
 */}}
 {{- define "fireworks-app.are-tickets-solved" }}
-	{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
-	{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
+	{{- $ticket1 := include "fireworks-app.get-ticket1" . | fromYaml }}
+	{{- $ticket2 := include "fireworks-app.get-ticket2" . | fromYaml }}
 	{{- $isTicket1Solved := and $ticket1 (eq $ticket1.data.status "done") }}
 	{{- $isTicket2Solved := and $ticket2 (eq $ticket2.data.status "done") }}
 	{{- if and $isTicket1Solved $isTicket2Solved }}
