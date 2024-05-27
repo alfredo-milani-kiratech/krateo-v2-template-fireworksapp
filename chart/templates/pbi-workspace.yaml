@@ -1,4 +1,6 @@
-{{- if include "fireworks-app.are-tickets-solved" $ }}
+{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
+{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
+{{- if and $ticket1 $ticket2 }}
 {{- range $environment := .Values.environments }}
 ---
 apiVersion: v1
@@ -9,8 +11,8 @@ metadata:
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
-  precondition-ticket1-status: ""
-  precondition-ticket2-status: ""
+  precondition-ticket1-status: {{ $ticket1.data.status | quote }}
+  precondition-ticket2-status: {{ $ticket2.data.status | quote }}
   id: ""
   env: {{ $environment }}
 {{- end }}

@@ -100,7 +100,9 @@ Compose fromRepo URL
 {{- define "fireworks-app.are-tickets-solved" }}
 	{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
 	{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
-	{{- if and $ticket1 $ticket2 }}
+	{{- $isTicket1Solved := and $ticket1 (eq $ticket1.data.status "done") }}
+	{{- $isTicket2Solved := and $ticket2 (eq $ticket2.data.status "done") }}
+	{{- if and $isTicket1Solved $isTicket2Solved }}
 		{{- dict "result" true | toYaml }}
 	{{- else }}
 		{{- dict | toYaml }}

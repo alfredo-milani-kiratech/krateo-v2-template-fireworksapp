@@ -1,6 +1,4 @@
-{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
-{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
-{{- if and $ticket1 $ticket2 }}
+{{- if include "fireworks-app.are-tickets-solved" $ }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -14,5 +12,4 @@ data:
   workspace-dev-id: ""
   workspace-uat-id: ""
   workspace-pro-id: ""
-  body: {{ printf "B1-%s|B2-%s" $ticket1.data.body $ticket2.data.body | quote }}
 {{- end }}
