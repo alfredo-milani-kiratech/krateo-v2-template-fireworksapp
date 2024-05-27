@@ -94,25 +94,15 @@ Compose fromRepo URL
 {{- printf "%s/%s/%s" .Values.git.fromRepo.scmUrl .Values.git.fromRepo.org .Values.git.fromRepo.name }}
 {{- end }}
 
-{{/*Check if all tickets has been solved*/}}
-{{/*not works*/}}
-{{- define "fireworks-app.are-tickets-solved" -}}
-{{- ternary "true" "" (and (include "fireworks-app.is-ticket1-solved" $) (include "fireworks-app.is-ticket2-solved" $)) -}}
-{{- end }}
-
-{{/*https://github.com/helm/helm/issues/10382*/}}
-{{/*{{- $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.1.23-jira-ticket1" -}}*/}}
-{{/*{{- $resource := lookup "v1" "ConfigMap" "demo-system" (printf "%s-jira-ticket1" (include "fireworks-app.chart" $)) -}}*/}}
-{{/*{{- $resource := lookup "v1" "ConfigMap" "demo-system" (printf "%s-jira-ticket1" (include "fireworks-app.chart" $)) -}}*/}}
-{{/*{{- if and $resource (eq $resource.data.status "done") -}}*/}}
-{{/*Check if ticket 1 has been solved*/}}
-{{- define "fireworks-app.is-ticket1-solved" -}}
-{{- $resource := lookup "v1" "ConfigMap" "demo-system" (printf "%s-jira-ticket1" (include "fireworks-app.chart" $)) }}
-{{- ternary "true" "" (and $resource (eq $resource.data.status "done")) }}
-{{- end }}
-
-{{/*Check if ticket 2 has been solved*/}}
-{{- define "fireworks-app.is-ticket2-solved" -}}
-{{- $resource := lookup "v1" "ConfigMap" "demo-system" "pbi-0.0.1-jira-ticket2" }}
-{{- ternary "true" "" (and $resource (eq $resource.data.status "done")) }}
+{{/*
+	Check if all tickets has been solved
+*/}}
+{{- define "fireworks-app.are-tickets-solved" }}
+	{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
+	{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
+	{{- if and $ticket1 $ticket2 }}
+		{{- dict "result" true | toYaml }}
+	{{- else }}
+		{{- dict | toYaml }}
+	{{- end }}
 {{- end }}

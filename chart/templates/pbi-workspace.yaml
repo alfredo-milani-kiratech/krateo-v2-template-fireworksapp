@@ -1,4 +1,4 @@
-{{- if and (include "fireworks-app.is-ticket1-solved" $) (include "fireworks-app.is-ticket2-solved" $) }}
+{{- if include "fireworks-app.are-tickets-solved" $ }}
 {{- range $environment := .Values.environments }}
 ---
 apiVersion: v1
@@ -13,6 +13,5 @@ data:
   precondition-ticket2-status: ""
   id: ""
   env: {{ $environment }}
-...
 {{- end }}
 {{- end }}
