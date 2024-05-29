@@ -5,6 +5,8 @@ kind: ConfigMap
 metadata:
   name: {{ include "fireworks-app.chart" $ }}-jira-ticket1
   namespace: demo-system
+  annotations:
+    helm.sh/resource-policy: keep
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
@@ -18,6 +20,8 @@ kind: ConfigMap
 metadata:
   name: {{ include "fireworks-app.chart" $ }}-jira-ticket2
   namespace: demo-system
+  annotations:
+    helm.sh/resource-policy: keep
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:

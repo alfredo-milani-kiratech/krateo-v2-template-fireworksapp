@@ -1,4 +1,4 @@
-apiVersion: composition.krateo.io/v0-1-29
+apiVersion: composition.krateo.io/v0-1-30
 kind: Pbi
 metadata:
   annotations:
