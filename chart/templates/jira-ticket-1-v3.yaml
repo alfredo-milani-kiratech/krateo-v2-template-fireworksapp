@@ -1,0 +1,16 @@
+{{- if eq (include "fireworks-app.ticket-version" $ | int) 3 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fireworks-app.chart" $ }}-jira-ticket1
+  namespace: demo-system
+  labels:
+    {{- include "fireworks-app.labels" $ | nindent 4 }}
+data:
+  id: ticket1
+  title: title1
+  body: body1
+  status: ""
+...
+{{- end }}

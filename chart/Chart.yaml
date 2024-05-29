@@ -18,6 +18,7 @@ type: application
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 version: CHART_VERSION
 # version: 0.0.1
+# version: 0.1.28
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -25,3 +26,4 @@ version: CHART_VERSION
 # It is recommended to use it with quotes.
 appVersion: CHART_VERSION
 # appVersion: 0.0.1
+# appVersion: 0.1.28

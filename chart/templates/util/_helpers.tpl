@@ -3,6 +3,14 @@ false
 {{- end }}
 
 {{/*
+	Define ticket resource version
+*/}}
+{{- define "fireworks-app.ticket-version" -}}
+	{{- $version := 2 }}
+	{{- $version | int }}
+{{- end }}
+
+{{/*
 Expand the name of the chart.
 */}}
 {{- define "fireworks-app.name" -}}

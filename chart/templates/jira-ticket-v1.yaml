@@ -1,3 +1,4 @@
+{{- if eq (include "fireworks-app.ticket-version" $ | int) 1 }}
 {{- range $ticket := .Values.tickets }}
 ---
 apiVersion: v1
@@ -12,4 +13,5 @@ data:
   title: {{ $ticket.title }}
   body: {{ $ticket.body }}
   status: ""
+{{- end }}
 {{- end }}
