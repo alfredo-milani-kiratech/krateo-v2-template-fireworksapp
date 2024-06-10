@@ -1,19 +1,16 @@
 {{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
-{{- $ticket2 := include "fireworks-app.get-ticket2" $ | fromYaml }}
-{{- if and $ticket1 $ticket2 }}
-{{- range $environment := .Values.environments }}
+{{- if $ticket1 }}
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ $environment }}
+  name: {{ include "fireworks-app.chart" $ }}-pbi-workspace-{{ .Values.environments }}
   namespace: demo-system
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
   precondition-ticket1-status: {{ $ticket1.data.status | quote }}
-  precondition-ticket2-status: {{ $ticket2.data.status | quote }}
-  id: ""
-  env: {{ $environment }}
-{{- end }}
+  name: ""
+  env: {{ .Values.environments }}
+...
 {{- end }}

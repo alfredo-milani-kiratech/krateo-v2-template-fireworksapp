@@ -6,7 +6,7 @@ false
 	Define ticket resource version
 */}}
 {{- define "fireworks-app.ticket-version" -}}
-	{{- $version := 2 }}
+	{{- $version := 4 }}
 	{{- $version | int }}
 {{- end }}
 

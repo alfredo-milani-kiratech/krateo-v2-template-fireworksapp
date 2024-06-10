@@ -7,34 +7,16 @@
   ],
   "properties": {
     "environments": {
-      "type": "array",
       "title": "Environments",
-      "items": {
-        "type": [
-          "string"
-        ]
-      }
+      "type": [
+        "string"
+      ]
     },
     "tickets": {
-      "type": "array",
       "title": "Tickets",
-      "items": {
-        "type": [
-          "object"
-        ],
-        "properties": {
-        "id": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "body": {
-          "type": "string"
-        }
-      },
-      "required": ["id", "title", "body"]
-      }
+      "type": [
+        "string"
+      ]
     }
   }
 }

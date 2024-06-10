@@ -1,4 +1,5 @@
-{{- if include "fireworks-app.are-tickets-solved" $ | fromYaml }}
+{{- $ticket1 := include "fireworks-app.get-ticket1" $ | fromYaml }}
+{{- if $ticket1 }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -8,8 +9,9 @@ metadata:
   labels:
     {{- include "fireworks-app.labels" $ | nindent 4 }}
 data:
-  id: ""
+  name: ""
   workspace-dev-id: ""
   workspace-uat-id: ""
   workspace-pro-id: ""
+...
 {{- end }}
